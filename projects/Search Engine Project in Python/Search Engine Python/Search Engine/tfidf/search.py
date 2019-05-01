@@ -65,7 +65,7 @@ def rank(query):
     doc_ids = [x['document'] for x in rows]
     # Retrieve document
     docs = Document.objects.filter(id__in=doc_ids)
-    for i in xrange(len(docs)):
+    for i in range(len(docs)):
         doc = docs[i]
         doc.score = math.ceil(rows[i]['total_score']*100)/100 
     return docs

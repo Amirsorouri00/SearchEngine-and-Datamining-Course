@@ -7,14 +7,14 @@ Created on Mar 20, 2013
 from os import listdir
 from os.path import join
 from nltk.tokenize import word_tokenize
-from tfidf.models import Document, TermFrequency, DocFrequency
+from .models import Document, TermFrequency, DocFrequency
 from nltk.probability import FreqDist
 from django.db.models import Count
 import math
 from nltk.stem.wordnet import WordNetLemmatizer
 
 # Return dict contains lemmatized term
-# Key is the term, value is number of times it appear in doc
+# Key is the term, value is number of times it appears in doc
 wordnet = WordNetLemmatizer()
 
 def get_term_freq_dict(data):
@@ -77,13 +77,13 @@ def tokenize_docs():
     
     # Else, process files
     # Get list of files inside docs
-    files = listdir("docs")
+    files = listdir("./tfidf/docs")
     files.sort()
     print(files)
     
     # Read content of files
     for path in files:
-        with open(join("docs", path)) as f:
+        with open(join("./tfidf/docs", path)) as f:
             data = f.read()
             process_data(data)
     
