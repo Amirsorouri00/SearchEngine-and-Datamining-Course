@@ -28,7 +28,7 @@ jaraco.functools==2.0
 jsonschema==2.6.0
 keyring==10.6.0
 keyrings.alt==3.0
-lxml==4.3.3
+lxml==4.6.5
 more-itertools==5.0.0
 mysqlclient==1.4.2.post1
 nltk==3.4.1
